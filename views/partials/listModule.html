@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="container">
+        <h1 class="text-center">Modules du projet</h1>
+        <div class="tab-content center-block" style="width:75%">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="filters">
+                        <th></th>
+                        <th></th>
+                        <th>Ref</th>
+                        <th>Nature</th>
+                        <th>Gamme</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="module in modules | filter:search:strict">
+                        <td ng-click="setModule()"><img src="./images/UPDATE.png" alt="Modifier"></img></td>
+                        <td ng-click="delModule()"><img src="./images/DELETE.png" alt="Supprimer"></img></td>
+                        <td> {{module.ref_mo}} </td>
+                        <td> {{module.nature}} </td>
+                        <td> {{module.ref_ga}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

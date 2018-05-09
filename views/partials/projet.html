@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="container">
+        <h1 class="text-center">Projets</h1>
+        <div class="tab-content center-block" style="width:75%">
+            <button type="button" class="btn btn-success pull-right" value="Nouveau" ng-click="addProjet()">Nouveau projet</button>
+            <button type="button" class="btn btn-success pull-right" value="Modele" ng-click="popProjet()">A partir d'un modèle</button>
+            <div class="panel" style="width:50%; float:left">
+                <div class="panel-body">
+                    <label>Modèle de gamme </label>
+                    <div>
+                        <select class="form-control" ng-model="G.id_ga" ng-options="G.id_ga as G.ref_ga for G in gammes">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-hover">
+            <thead>
+                <tr class="filters">
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Etat</th>
+                    <th>Création</th>
+                    <th>Construction</th>
+                    <th>Clôture</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="projet in projets | filter:search:strict">
+                    <td ng-click="editDevis()"><img src="./images/DEVIS.png" alt="Devis"></img></td>
+                    <td ng-click="setProjet()"><img src="./images/UPDATE.png" alt="Modifier"></img></td>
+                    <td ng-click="delProjet()"><img src="./images/DELETE.png" alt="Supprimer"></img></td>
+                    <td> {{projet.etat}} </td>
+                    <td> {{projet.date_crea}} </td>
+                    <td> {{projet.date_cons}} </td>
+                    <td> {{projet.date_clot}} </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
