@@ -3,7 +3,7 @@ Controlleur permettant la conception
 View: projet.html
 ***/
 'use strict';
- app.controller('ProjetCtrl', ['$http','$scope', function ($http,$scope) {
+ app.controller('ProjetCtrl', ['$http','$scope','ngDialog', function ($http,$scope,ngDialog) {
 
     listProjet();
     listGammes();
@@ -18,7 +18,7 @@ View: projet.html
     	}).then(function successCallback(res) {
             $scope.projets = res.data.projets;
             console.log(res);
-            return $scope.projets;
+            return;
         }, function errorCallback(err) {
             console.log("Impossible d'accéder à la liste des projets.\n" + err.toString());
         });
@@ -46,7 +46,7 @@ View: projet.html
     $scope.setProjet = () => {
 	}
 
-    $scope.delProjet = () => { 
+    $scope.delProjet = () => {
 	}
 
 

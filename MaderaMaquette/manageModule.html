@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+
+	<head>
+	  <meta charset="utf-8">
+	  <title>MADERA manage Module</title>
+	  <link href="css/style.css" rel="stylesheet">
+	  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">	  
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="script.js"></script>
+	</head>
+	
+	<body>	
+	<!-- BANDEAU MADERA -->
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">MADERA</a>
+		</div>
+		<ul class="nav navbar-nav">
+		  <li class="active"><a href="#">ACCUEIL</a></li>
+		  <li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Espace Projet
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Nouveau projet</a></li>
+			  <li><a href="#">Consulter projet</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Référentiel
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Gestion Projet/Client</a></li>
+			  <li><a href="#">Gestion Fournisseur</a></li>
+			  <li><a href="#">Gestion Gamme</a></li>
+			  <li><a href="#">Gestion Module</a></li>
+			  <li><a href="#">Gestion Composant</a></li>
+			</ul>
+		  </li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">      
+		  <button id="logButton" type="button" data-toggle="modal" data-target="#myModal">SE DECONNECTER</button>
+		</ul>
+	  </div>
+	</nav> 
+						
+	<!-- ZONE DE TRAVAIL -->
+	<div id="containerWorkZone" class="container-fluid">
+		<div class="col-xs-12">
+			
+				
+					<div class="panel-group" id="panelGroup">
+						<div class="panel panel-default">
+						  <div class="panel-heading">CREATION CLIENT</div>
+						  <div class="panel-body">
+						  
+							<div class="row">
+								<div class="col-xs-2">
+									<label>Civilité :</label>
+								</div>
+								<div class="col-xs-4">
+									<select>
+									  <option value="mr">Mr</option>
+									  <option value="mme">Mme</option>
+									</select> 
+								</div>
+								<div class="col-xs-2">
+									<label>Adresse :</label>
+								</div>	
+								<div class="col-xs-4">
+									<input type="text" name="customerLastName" required> 
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-2">
+									<label>Nom :</label>
+								</div>	
+								<div class="col-xs-4">
+									<input type="text" name="customerLastName" required> 
+								</div>
+								<div class="col-xs-2">
+									<label>Cplt. d'adresse :</label>
+								</div>	
+								<div class="col-xs-4">
+									<input type="text" name="customerLastName" required> 
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-xs-2">
+									<label>Prénom :</label>
+								</div>	
+								<div class="col-xs-4">
+									<input type="text" name="customerName" required> 
+								</div>
+								<div class="col-xs-2">
+									<label>Code postal :</label>
+								</div>	
+								<div class="col-xs-4">
+									<input type="text" name="customerLastName" required> 
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-xs-2">
+									<label>Profession :</label>
+								</div>	
+								<div class="col-xs-4">
+									<input type="text" name="customerJob">  
+								</div>
+								<div class="col-xs-2">
+									<label>Ville :</label>
+								</div>	
+								<div class="col-xs-4">
+									<input type="text" name="customerLastName" required> 
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-xs-2">
+									<label>Actuel propriétaire :</label>
+								</div>	
+								<div class="col-xs-4">	
+									<label class="radio-inline"><input type="radio" name="optradio">OUI</label>
+									<label class="radio-inline"><input type="radio" name="optradio">NON</label>									
+								</div>								
+								<div class="col-xs-2">
+									<label>Téléphone :</label>
+								</div>	
+								<div class="col-xs-4">
+									<input type="text" name="customerLastName" required> 
+								</div>
+							</div>
+							
+						  </div>
+						  <div class="panel-footer">
+							<div class="col-xs-10"></div>							
+							<button type="button" class="btn btn-default">VALIDER</button>
+							<button type="button" class="btn btn-default">ANNULER</button>
+						  </div>
+						</div>
+						<div class="panel panel-default">
+						  <div class="panel-heading">CREATION PROJET</div>
+						  <div class="panel-body">
+						  
+							<div class="row">
+								<div class="col-xs-2">
+									<label>Nom projet :</label>
+								</div>	
+								<div class="col-xs-4">
+									<input type="text" name="customerJob">  
+								</div>
+								<div class="col-xs-2">
+									<label>Client :</label>
+								</div>	
+								<div class="col-xs-4">
+									<select name="client">
+									  <option value="client1">Client 1</option>
+									  <option value="client2">Client 2</option>
+									  <option value="client3">Client 3</option>
+									</select> 
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-2">
+									<label>Gamme :</label>
+								</div>
+								<div class="col-xs-4">
+									<select name="gamme">
+									  <option value="a">A</option>
+									  <option value="b">B</option>
+									  <option value="c">C</option>
+									</select> 
+								</div>
+								<div class="col-xs-2">
+									<label>Modèle type :</label>
+								</div>	
+								<div class="col-xs-4">
+									<select name="modeleType">
+									  <option value="eden">Eden</option>
+									  <option value="paradise">Paradise</option>
+									</select> 
+								</div>
+							</div>
+									
+						  </div>
+						  <div class="panel-footer">
+							<div class="col-xs-10"></div>							
+							<button type="button" class="btn btn-default">VALIDER</button>
+							<button type="button" class="btn btn-default">ANNULER</button>														
+						  </div>
+						</div>
+					</div>
+								
+							
+		</div>
+	</div>
+		
+		
+	</body>
+</html>

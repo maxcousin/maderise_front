@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="container">
+        <h1 class="text-center">Projets</h1>
+        <div class="tab-content center-block" style="width:75%">
+            <button type="button" class="btn btn-success pull-right" value="Nouveau" ng-click="addClient()">Nouveau client</button>
+            <!--<button type="button" class="btn btn-success pull-right" value="Modele" ng-click="popProjet()">A partir d'un modèle</button>-->
+            <div class="panel" style="width:50%; float:left">
+                <div class="panel-body">
+                    <label>A partir d'un modèle: </label>
+                    <div>
+                        <select class="form-control" ng-model="P.id_pr" ng-options="P.id_pr as P.etat for P in projets">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

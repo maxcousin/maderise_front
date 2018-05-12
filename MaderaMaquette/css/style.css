@@ -1,0 +1,71 @@
+/*Application image de fond au body de la page*/
+body {
+background:url(../img/bandeau_3840x2160.jpg) no-repeat center top;
+-webkit-background-size: cover; 
+-moz-background-size: cover;   
+background-size: cover;
+}
+
+#logo
+{
+	background:url(../img/logoSmallSize.jpg) no-repeat;		
+    height: 100px;	
+    margin-left:25px;
+	margin-top:15px;
+    padding:0px;
+}
+
+#logButton
+{
+	margin:13px 13px 0px 0px;
+	background-color:#9d9d9d;
+	font-weight: bold;
+}
+
+#bandeauMadera
+{
+	background-color: rgba(0, 0, 0, 0.2)!important;
+}
+
+#containerWorkZone
+{
+	background-color: rgba(34, 34, 34, 1)!important;
+	height:50%;
+	margin: 5% 5% 5% 5%;
+	padding: 1% 1% 1% 1%;
+	border-radius: 10px;	
+}
+
+#myCarousel
+{
+	margin: auto;
+    width: 50%;
+	padding: 2% 0% 2% 0%;
+}
+
+#workZone
+{
+	background-color: WhiteSmoke;	
+}
+
+#panelGroup
+{
+	margin: auto;
+}
+
+#panelClassic
+{
+	margin: auto;
+}
+
+.imgCaroussel
+{
+	width: 90%; 
+	margin: auto;
+}
+
+.spaceRow
+{
+	height:10%;
+}
+

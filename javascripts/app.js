@@ -9,7 +9,21 @@
  * Main module of the application.
  */
 
-var app = angular.module('maderiseApp', ['ngRoute']);
+var app = angular.module('maderiseApp', ['ngRoute','ngDialog']);
+
+app.config(['ngDialogProvider', function (ngDialogProvider) {
+    ngDialogProvider.setDefaults({
+        className: 'ngdialog-theme-default',
+        plain: false,
+        showClose: true,
+        closeByDocument: true,
+        closeByEscape: true,
+        appendTo: false,
+        preCloseCallback: function () {
+            console.log('default pre-close callback');
+        }
+    });
+}]);
 
 app.config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -21,6 +35,10 @@ app.config(['$routeProvider','$locationProvider', function ($routeProvider, $loc
     .when('/projet', {
       templateUrl: 'views/partials/projet.html',
       controller: 'ProjetCtrl'
+    })
+    .when('/newProjet', {
+      templateUrl: 'views/partials/newProjet.html',
+      controller: 'NewProjetCtrl'
     })
     .when('/listModule', {
       templateUrl: 'views/partials/listModule.html',

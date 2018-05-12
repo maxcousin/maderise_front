@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html lang="fr">
+
+	<head>
+	  <meta charset="utf-8">
+	  <title>MADERA Accueil</title>
+	  <link href="css/style.css" rel="stylesheet">
+	  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="./js/index.js"></script>
+	  <!--<script src="script.js"></script>-->
+	</head>
+
+	<body>
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header" style="background-color:#222222">
+			<button type="button" class="close" style="color:white" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title" style="color:WhiteSmoke">CONNEXION</h4>
+		  </div>
+		  <div class="modal-body">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-2">
+						<label><b>Nom</b></label>
+					</div>
+					<div class="col-xs-3">
+						<input type="text" placeholder="Enter Username" name="uname" required>
+					</div>
+					<div class="col-xs-7">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-2">
+						<label><b>Password</b></label>
+					</div>
+					<div class="col-xs-3">
+						<input type="password" placeholder="Enter Password" name="psw" required>
+					</div>
+					<div class="col-xs-7">
+					</div>
+				</div>
+			</div>
+		  </div>
+		  <div class="modal-footer" style="background-color:#222222">
+			<button type="button" class="btn btn-default" data-dismiss="modal">VALIDER</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal">ANNULER</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- FIN Modal -->
+
+	<!-- BANDEAU MADERA -->
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#" onclick="displayCarouselLobby();">MADERA</a>
+		</div>
+		<ul class="nav navbar-nav">
+		  <li><a href="#" onclick="displayListeMesDevis();">ACCUEIL</a></li>
+		  <li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Espace Projet
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Nouveau projet</a></li>
+			  <li><a href="#">Consulter projet</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Référentiel
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Gestion Projet/Client</a></li>
+			  <li><a href="#">Gestion Fournisseur</a></li>
+			  <li><a href="#">Gestion Gamme</a></li>
+			  <li><a href="#">Gestion Module</a></li>
+			  <li><a href="#">Gestion Composant</a></li>
+			</ul>
+		  </li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <button id="logButton" type="button" data-toggle="modal" data-target="#myModal">SE CONNECTER</button>
+		</ul>
+	  </div>
+	</nav>
+	<!-- FIN BANDEAU MADERA -->
+
+		<!-- ZONE DE TRAVAIL  Gallerie photos -->
+        <div id="containerWorkZone" class="container-fluid">
+            
+        </div>
+    </body>
+</html>

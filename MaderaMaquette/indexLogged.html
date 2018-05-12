@@ -1,0 +1,111 @@
+﻿<!doctype html>
+<html lang="fr">
+
+	<head>
+	  <meta charset="utf-8">
+	  <title>MADERA Accueil Logged</title>
+	  <link href="css/style.css" rel="stylesheet">
+	  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">	  
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="script.js"></script>
+	</head>
+	
+	<body>	
+	<!-- BANDEAU MADERA -->
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">MADERA</a>
+		</div>
+		<ul class="nav navbar-nav">
+		  <li class="active"><a href="#">ACCUEIL</a></li>
+		  <li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Espace Projet
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Nouveau projet</a></li>
+			  <li><a href="#">Consulter projet</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Référentiel
+			<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="#">Gestion Projet/Client</a></li>
+			  <li><a href="#">Gestion Fournisseur</a></li>
+			  <li><a href="#">Gestion Gamme</a></li>
+			  <li><a href="#">Gestion Module</a></li>
+			  <li><a href="#">Gestion Composant</a></li>
+			</ul>
+		  </li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">      
+		  <button id="logButton" type="button" data-toggle="modal" data-target="#myModal">SE DECONNECTER</button>
+		</ul>
+	  </div>
+	</nav> 
+						
+		<!-- ZONE DE TRAVAIL -->
+		<div id="containerWorkZone" class="container-fluid">
+			<div class="col-xs-12">
+				<div class="panel panel-default" id="panelClassic">
+				  <div class="panel-heading"><H4>MES DEVIS</H4></div>
+				  <div class="panel-body">
+					<table class="table table-hover">
+						<thead>
+                            <tr>
+                                <th>Prénom</th>
+                                <th>Nom</th>
+                                <th>Email</th>
+                                <th>Numéro devis</th>
+                                <th>Date création</th>
+                                <th>Date validation</th>
+                                <th>Etat devis</th>
+                            </tr>
+						</thead>
+						<tbody>
+                            <tr>
+                                <td>Jean</td>
+                                <td>Jean</td>
+                                <td>jean.jean@XXXX.com</td>
+                                <td>D00000001</td>
+                                <th>01/01/2018</th>
+                                <th>12/01/2018</th>
+                                <th>Attente validation</th>
+                            </tr>
+                            <tr>
+                                <td>Paul</td>
+                                <td>Paul</td>
+                                <td>paul.paul@XXXX.com</td>
+                                <td>D00000002</td>
+                                <th>02/01/2018</th>
+                                <th>10/01/2018</th>
+                                <th>Refusé</th>
+                            </tr>
+                            <tr>
+                                <td>Sophie</td>
+                                <td>Sophie</td>
+                                <td>sophie.sophie@XXXX.com</td>
+                                <td>D00000003</td>
+                                <th>07/03/2018</th>
+                                <th>18/05/2018</th>
+                                <th>Commande</th>
+                            </tr>
+                            <tr>
+                                <td>Virginie</td>
+                                <td>Virginie</td>
+                                <td>virginie.virginie@XXXX.com</td>
+                                <td>D00000004</td>
+                                <th>23/01/2018</th>
+                                <th>03/03/2018</th>
+                                <th>Terminé</th>
+                            </tr>						  					  						  				  
+						</tbody>
+					  </table>
+				  </div>
+				</div>							
+			</div>
+		</div>		
+	</body>
+</html>
