@@ -15,18 +15,18 @@
   </div>
 </script>
 <div ng-style="{'background-color' : 'none'}" ng-controller="NewClientCtrl">
-	<div ng-style="{'width':'95%', 'margin':'0 auto', 'padding':'10px'}">
-            <form role="form" name="form" novalidate>
+		<div class="col-sm-12">
+            <form role="form" name="formClient" novalidate>
 				<h4>Nouveau client</h4>
 				<br />
 					<div class="form-group">
-                        <div class="form-group" ng-class="{ 'has-error' : form.nom_cl.$invalid }">
+                        <div class="form-group" ng-class="{ 'has-error' : formClient.nom_cl.$invalid }">
 							<label for="nom_cl">Nom </label>
 							<input class="form-control" ng-model="nom_cl" id="nom_cl" required ng-minlength="2" ng-maxlength="50"/>
-                            <div class="help-block" ng-if="form.nom_cl.$error !== {}" role="alert">
-                              <div class="warning" ng-if="form.nom_cl.$error.minlength">Trop court.</div>
-                              <div class="warning" ng-if="form.nom_cl.$error.maxlength">Trop long.</div>
-                              <div class="warning" ng-if="form.nom_cl.$error.required">Requis.</div>
+                            <div class="help-block" ng-if="formClient.nom_cl.$error !== {}" role="alert">
+	                            <div class="warning" ng-if="formClient.nom_cl.$error.minlength">Trop court.</div>
+	                            <div class="warning" ng-if="formClient.nom_cl.$error.maxlength">Trop long.</div>
+	                            <div class="warning" ng-if="formClient.nom_cl.$error.required">Requis.</div>
                             </div>
                         </div>
                     </div>
@@ -58,6 +58,6 @@
 					<strong>Erreur!</strong> {{ msg.txt }}
 				</div>
 			</div>
-	</div>
+		</div>
 
 </div>
