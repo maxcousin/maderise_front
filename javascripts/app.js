@@ -40,13 +40,17 @@ app.config(['$routeProvider','$locationProvider', function ($routeProvider, $loc
       templateUrl: 'views/partials/newProjet.html',
       controller: 'NewProjetCtrl'
     })
-    .when('/listModule', {
+    .when('/listModule/:id_pr', {
       templateUrl: 'views/partials/listModule.html',
       controller: 'ListModuleCtrl'
     })
     .when('/conception', {
       templateUrl: 'views/partials/conception.html',
       controller: 'ConceptionCtrl'
+    })
+    .when('/listDevis/:id_pr', {
+      templateUrl: 'views/partials/listDevis.html',
+      controller: 'ListDevisCtrl'
     })
     .otherwise({redirectTo: '/'});
 

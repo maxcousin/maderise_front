@@ -1,0 +1,80 @@
+<script type="text/ng-template" id="notValidDialog">
+  <div class="wrong-popup">
+    <div ng-style="{'width':'95%', 'margin':'0 auto', 'padding':'10px'}">
+      <div class="col-sm-12">
+        <span class="glyphicon glyphicon-remove red save-icon text-center center-block" aria-hidden="true"></span>
+        <h4 class="text-center">L'ensemble des champs obligatoires n'a pas été rempli.</h4>
+        <br />
+        <h5 class="text-center">Merci de bien vouloir compléter votre saisie.</h4>
+        <br />
+      </div>
+    </div>
+    <div class="col-sm-12" align="center">
+      <button class="btn btn-warning" type="button" ng-click="closeThisDialog('OK')">Ok</button>
+    </div>
+  </div>
+</script>
+<div ng-controller="NewModuleCtrl">
+    <form role="form" name="formModule" novalidate>
+		<h4>Nouveau module</h4>
+        <div class="panel-group">
+            <label>Module: </label>
+            <div>
+                <select class="form-control" ng-model="M.id_mo" ng-options="M.id_mo as M.ref_mo for M in modules">
+                </select>
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="form-group" ng-class="{ 'has-error' : formModule.modele_mo.$invalid }">
+				<label for="modele_mo">Intitulé </label>
+				<input class="form-control" ng-model="modele_mo" id="modele_mo" required ng-minlength="2" ng-maxlength="30"/>
+                <div class="help-block" ng-if="formModule.modele_mo.$error !== {}" role="alert">
+                    <div class="warning" ng-if="formModule.modele_mo.$error.required">Requis.</div>
+                </div>
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="form-group" ng-class="{ 'has-error' : formModule.long_mo.$invalid }">
+				<label for="long_mo">Longueur </label>
+				<input class="form-control" type="number" ng-model="long_mo" id="long_mo" required/>
+                <div class="help-block" ng-if="formModule.long_mo.$error !== {}" role="alert">
+                    <div class="warning" ng-if="formModule.long_mo.$error.required">Requis.</div>
+                </div>
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="form-group" ng-class="{ 'has-error' : formModule.larg_mo.$invalid }">
+				<label for="larg_mo">Largeur </label>
+				<input class="form-control" type="number" ng-model="larg_mo" id="larg_mo" required/>
+                <div class="help-block" ng-if="formModule.larg_mo.$error !== {}" role="alert">
+                    <div class="warning" ng-if="formModule.larg_mo.$error.required">Requis.</div>
+                </div>
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="form-group" ng-class="{ 'has-error' : formModule.epai_mo.$invalid }">
+				<label for="epai_mo">Epaisseur </label>
+				<input class="form-control" type="number" ng-model="epai_mo" id="epai_mo" required/>
+                <div class="help-block" ng-if="formModule.epai_mo.$error !== {}" role="alert">
+                    <div class="warning" ng-if="formModule.epai_mo.$error.required">Requis.</div>
+                </div>
+            </div>
+        </div>
+    </form>
+	<br />
+	<br />
+	<div class="col-sm-12" align="center">
+		<button class="btn btn-success" type="button" ng-click="addModule(formModule)">Ajouter</button>
+		<button class="btn btn-danger" type="button" ng-click="retour()">Annuler</button>
+	</div>
+	<br/>
+	<div class="col-sm-12" align="center">
+		<div ng-if="msg.isGood == 'yes'" class="alert alert-success">
+			<strong>Succès!</strong> {{ msg.txt }}
+		</div>
+		<div ng-if="msg.isGood == 'no'" class="alert alert-danger">
+			<strong>Erreur!</strong> {{ msg.txt }}
+		</div>
+	</div>
+
+</div>

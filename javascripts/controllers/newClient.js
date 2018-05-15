@@ -1,4 +1,22 @@
-app.controller('NewClientCtrl', ['$http', '$scope', '$rootScope', '$window', 'ngDialog', function($http, $scope, $rootScope, $window, ngDialog) {
+app.controller('NewClientCtrl', ['$http', '$scope', '$rootScope', '$window', 'ngDialog', '$location', function($http, $scope, $rootScope, $window, ngDialog, $location) {
+
+	/* Fonction listant les projets */
+	function listClient() {
+		$http({
+			url: 'http://localhost:3000/client/getClients',
+			method: 'GET',
+			datatype: 'json',
+			contentType: 'text/plain',
+			headers: {'Content-Type': 'application/json'}
+		}).then(function successCallback(res) {
+			$scope.clients = res.data.clients;
+			//$rootscope.clients = res.data.clients;//
+			console.log(res);
+			return;
+		}, function errorCallback(err) {
+			console.log("Impossible d'accéder à la liste des clients.\n" + err.toString());
+		});
+	}
 
     /* Ajout d'un client */
 	$scope.addClient = (form) => {
@@ -15,6 +33,10 @@ app.controller('NewClientCtrl', ['$http', '$scope', '$rootScope', '$window', 'ng
 	    		contentType: 'text/plain',
 	    		headers: {'Content-Type': 'application/json'}
 	    	}).then(function successCallback(res) {
+				//listClient();
+				//$rootScope.$broadcast('refresh');
+				//$location.path('/newProjet');
+				//$rootScope.$broadcast('refreshClients');
 				ngDialog.close({});
 	            return;
 	        }, function errorCallback(err) {

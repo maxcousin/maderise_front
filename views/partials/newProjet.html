@@ -3,22 +3,59 @@
         <h1 class="text-center">Projets</h1>
         <div class="tab-content center-block" style="width:75%">
             <button type="button" class="btn btn-success pull-right" value="Nouveau" ng-click="addClient()">Nouveau client</button>
-            <!--<button type="button" class="btn btn-success pull-right" value="Modele" ng-click="popProjet()">A partir d'un modèle</button>-->
             <div class="panel" style="width:50%; float:left">
-                <div class="panel-body">
-                    <label>A partir d'un modèle: </label>
-                    <div>
-                        <select class="form-control" ng-model="P.id_pr" ng-options="P.id_pr as P.etat for P in projets">
-                        </select>
+                <form role="form" name="formProjet" novalidate>
+                    <div class="form-group" ng-class="{ 'has-error' : formProjet.inputRef.$invalid }">
+                        <label for="inputRef">Référence<sup class="red">*</sup></label>
+                        <input type="text" class="form-control" id="inputRef" name="inputRef" placeholder="Ref projet" ng-model="ref_pr" required ng-minlength="2" ng-maxlength="50" />
                     </div>
-                </div>
-                <div class="panel-body">
-                    <label>Client: </label>
-                    <div>
-                        <select class="form-control" ng-model="C.id_cl" ng-options="C.id_cl as C.nom_cl for C in clients">
+                    <div class="form-group" ng-class="{ 'has-error' : formProjet.inputType.$invalid }">
+                        <label for="inputType">Type<sup class="red">*</sup></label>
+                        <select class="form-control" ng-model="type_pr" id="inputType" name="inputType" required>
+                            <option value="C">Concept</option>
+                            <option value="P">Projet client</option>
                         </select>
+                        <div class="help-block" ng-if="formProjet.inputRef.$error !== {}" role="alert">
+                          <div class="warning" ng-if="formProjet.inputRef.$error.required">Requis.</div>
+                        </div>
                     </div>
-                </div>
+                    <div class="panel-group">
+                        <label>A partir d'un modèle: </label>
+                        <div>
+                            <select class="form-control" ng-model="P.id_pr" ng-options="P.id_pr as P.ref_pr for P in projets">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="panel-group">
+                        <label>Client: </label>
+                        <div>
+                            <select class="form-control" ng-model="C.id_cl" ng-options="C.id_cl as C.nom_cl for C in clients">
+                            </select>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success pull-right" value="Projet+" ng-click="addProjet()">Créer</button>
+                    <!--<button type="button" class="btn btn-success pull-right" value="Module+" ng-click="addModule()">Ajouter Module</button>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="filters">
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>Ref</th>
+                                <th>Nature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="module in modules | filter:search:strict">
+                                <td ng-click="editDevis()"><img src="./images/DEVIS.png" alt="Devis"></img></td>
+                                <td ng-click="setProjet()"><img src="./images/UPDATE.png" alt="Modifier"></img></td>
+                                <td ng-click="delProjet()"><img src="./images/DELETE.png" alt="Supprimer"></img></td>
+                                <td> {{module.ref_mo}} </td>
+                                <td> {{module.nature}} </td>
+                            </tr>
+                        </tbody>
+                    </table>-->
+                </form>
             </div>
         </div>
     </div>

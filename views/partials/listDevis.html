@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="container">
+        <h1 class="text-center">Liste des devis</h1>
+        <div class="tab-content center-block" style="width:75%">
+            <button type="button" class="btn btn-success pull-right" value="Devis+" ng-click="generateDevis()">Générer un devis</button>
+            <table class="table table-hover">
+                <thead>
+                    <tr class="filters">
+                        <th>N°</th>
+                        <th>Création</th>
+                        <th>Montant</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="d in devis | filter:search:strict">
+                        <td> {{d.id_de}} </td>
+                        <td> {{d.crea_de}} </td>
+                        <td> {{d.montant}} </td>
+                        <!--<td ng-click="setDevis()"><img src="./images/UPDATE.png" alt="Modifier" /></td>-->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

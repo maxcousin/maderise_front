@@ -1,0 +1,8 @@
+<div ng-controller="RemoveModuleCtrl">
+    <p>Etes-vous sur de vouloir retirer ce module ?</p>\
+    <div class="ngdialog-buttons">
+        <input type="hidden" id="id_pm" name="id_pm" ng-model="id_pm">
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="retour()">Non</button>
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="removeModule(id_pm)">Oui</button>
+    </div>
+</div>

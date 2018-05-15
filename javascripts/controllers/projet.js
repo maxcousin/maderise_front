@@ -3,7 +3,7 @@ Controlleur permettant la conception
 View: projet.html
 ***/
 'use strict';
- app.controller('ProjetCtrl', ['$http','$scope','ngDialog', function ($http,$scope,ngDialog) {
+ app.controller('ProjetCtrl', ['$http','$scope','ngDialog', '$window', '$location', function ($http,$scope,ngDialog,$window,$location) {
 
     listProjet();
     listGammes();
@@ -40,13 +40,19 @@ View: projet.html
         });
     }
 
-    $scope.editDevis = () => {
+    $scope.editDevis = (id_pr) => {
+        $location.path('/listDevis/' + id_pr);
 	}
 
-    $scope.setProjet = () => {
+    $scope.setProjet = (id_pr) => {
+        $location.path('/listModule/' + id_pr);
 	}
 
     $scope.delProjet = () => {
+        ngDialog.open({
+			template: 'views/partials/pop-up/delModule.html',
+			overlay: false
+		});
 	}
 
 

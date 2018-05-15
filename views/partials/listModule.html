@@ -2,6 +2,8 @@
     <div class="container">
         <h1 class="text-center">Modules du projet</h1>
         <div class="tab-content center-block" style="width:75%">
+            <input type="hidden" id="id_pr" name="id_pr" ng-model="id_pr">
+            <button type="button" class="btn btn-success pull-right" value="Ajouter module" ng-click="addModule()">Nouveau module</button>
             <table class="table table-hover">
                 <thead>
                     <tr class="filters">
@@ -14,8 +16,8 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="module in modules | filter:search:strict">
-                        <td ng-click="setModule()"><img src="./images/UPDATE.png" alt="Modifier"></img></td>
-                        <td ng-click="delModule()"><img src="./images/DELETE.png" alt="Supprimer"></img></td>
+                        <td ng-click="setModule(module.id_mo)"><img src="./images/UPDATE.png" alt="Modifier"></img></td>
+                        <td ng-click="delModule(module.compose.id_pm)"><img src="./images/DELETE.png" alt="Supprimer"></img></td>
                         <td> {{module.ref_mo}} </td>
                         <td> {{module.nature}} </td>
                         <td> {{module.ref_ga}} </td>

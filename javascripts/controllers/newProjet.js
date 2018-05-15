@@ -1,7 +1,11 @@
 app.controller('NewProjetCtrl', ['$http', '$scope', '$rootScope', '$window', '$location', 'ngDialog', function($http,$scope, $rootScope, $window, $location, ngDialog) {
-
+    console.log("a");
     listProjet();
-    listClient();
+    listClient();//dans rootcontroller
+    //$scope.clients = $rootScope.clients;
+    // $rootScope.$on('refreshClients', function(){
+    //     listClient();
+    // })
 
     /* Fonction listant les projets */
     function listProjet() {
@@ -28,7 +32,8 @@ app.controller('NewProjetCtrl', ['$http', '$scope', '$rootScope', '$window', '$l
             contentType: 'text/plain',
             headers: {'Content-Type': 'application/json'}
         }).then(function successCallback(res) {
-            $scope.clients = res.data;
+            $scope.clients = res.data.clients;
+            //$rootScope.clients = res.data.clients;
             console.log(res);
             return;
         }, function errorCallback(err) {
@@ -41,7 +46,30 @@ app.controller('NewProjetCtrl', ['$http', '$scope', '$rootScope', '$window', '$l
 	$scope.addClient = () => {
 		ngDialog.open({
 			template: 'views/partials/pop-up/newClient.html',
-			overlay: false
+			overlay: false,
+            preCloseCallback:function(){listClient();}
 		});
 	};
+
+    /* Ajout du projet */
+	$scope.addProjet = () => {
+        $http({
+    		url: 'http://localhost:3000/projet/addProjet',
+    		method: 'POST',
+    		datatype: 'json',
+            data: {	'ref_pr': $scope.ref_pr,
+              'type_pr': $scope.type_pr,
+              'id_cl': $scope.id_cl
+            },
+    		contentType: 'text/plain',
+    		headers: {'Content-Type': 'application/json'}
+    	}).then(function successCallback(res) {
+            console.log(res);
+            $location.path('/projet');//REDIRIGER PLUTOT VERS LA CONCEPTION DU NOUVEAU PROJET CREE
+            //return;
+        }, function errorCallback(err) {
+            console.log("Impossible d'ajouter le projet.\n" + err.toString());
+        });
+	}
+
 }]);
